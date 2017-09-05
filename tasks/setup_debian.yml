@@ -1,0 +1,17 @@
+---
+
+- name: Add amonagent repository key
+  apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: AD53961F
+
+- name: Add repository - Debian/Ubuntu
+  apt_repository:
+    repo: deb http://packages.amon.cx/repo amon contrib
+    state: present
+    filename: 'amonagent'
+
+- name: Install
+  apt:
+    name: amonagent
+    update_cache: yes

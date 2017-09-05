@@ -1,0 +1,7 @@
+---
+
+- name: restart_amonagent
+  service:
+    name: amonagent
+    state: restarted
+    enabled: true

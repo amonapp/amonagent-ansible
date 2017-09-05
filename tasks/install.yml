@@ -1,0 +1,11 @@
+---
+
+- name: Add amonagent config
+- template: 
+    src: amonagent.json.j2
+    dest: /etc/opt/amonagent/amonagent.conf
+
+# Alwayws trigger the restart handler. By default triggered only on change
+- command: /bin/true
+  notify: 
+    - restart_amonagent

@@ -1,0 +1,11 @@
+---
+
+- name: Add repository - RedHat/CentOS
+- template: 
+    src: redhat_repo.j2
+    dest: /etc/yum.repos.d/amonagent.repo
+
+- name: Install
+  yum: 
+    name: amonagent 
+    state: latest
