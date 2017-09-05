@@ -17,11 +17,18 @@ The variables that can be passed to this role are as follows:
     amon_instance: "http://youramoninstance.amon.cx"    # The URL pointing to your Amon Instance
 
 
-Example
+Installation
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+To install the role run the following command:
 
+```
+ansible-galaxy install amonapp.amonagent
+```
+
+
+Example
+----------------
 
     - hosts: all
       roles:
