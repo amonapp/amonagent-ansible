@@ -27,7 +27,7 @@ container=${container:-"ansible:ubuntu1604"}
 playbook=${playbook:-"test.yml"}
 cleanup=${cleanup:-"true"}
 container_id=${container_id:-$timestamp}
-test_idempotence=${test_idempotence:-"true"}
+test_idempotence=${test_idempotence:-"false"}
 
 ## Set up vars for Docker setup.
 # CentOS 7
@@ -67,7 +67,7 @@ printf "\n"
 # Install requirements if `requirements.yml` is present.
 if [ -f "$PWD/tests/requirements.yml" ]; then
   printf ${green}"Requirements file detected; installing dependencies."${neutral}"\n"
-  docker exec --tty $container_id env TERM=xterm ansible-galaxy install -r /etc/ansible/roles/role_under_test/tests/requirements.yml
+  docker exec --tty $container_id env TERM=xterm ansible-playbook /etc/ansible/roles/role_under_test/tests/requirements.yml --connection=local
 fi
 
 printf "\n"
@@ -86,7 +86,7 @@ if [ "$test_idempotence" = true ]; then
   # Run Ansible playbook again (idempotence test).
   printf ${green}"Running playbook again: idempotence test"${neutral}
   idempotence=$(mktemp)
-  docker exec $container_id ansible-playbook /etc/ansible/roles/role_under_test/$playbook | tee -a $idempotence
+  docker exec $container_id ansible-playbook /etc/ansible/roles/role_under_test/$playbook --connection=local | tee -a $idempotence
   tail $idempotence \
     | grep -q 'changed=0.*failed=0' \
     && (printf ${green}'Idempotence test: pass'${neutral}"\n") \
