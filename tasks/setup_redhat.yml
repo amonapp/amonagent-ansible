@@ -5,7 +5,12 @@
     src: redhat_repo.j2
     dest: /etc/yum.repos.d/amonagent.repo
 
+- name: Add repository key
+  rpm_key:
+    key: https://packages.amon.cx/amon.key
+
 - name: Install
   yum: 
     name: amonagent 
     state: latest
+    disable_gpg_check: yes

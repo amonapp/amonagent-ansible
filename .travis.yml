@@ -11,3 +11,7 @@ script:
 
   # Run tests.
   - ${PWD}/docker-tests.sh
+
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/

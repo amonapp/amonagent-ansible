@@ -1,4 +1,4 @@
-DISTROS=debian8
+DISTROS=centos7
 
 docker_test:
 	for distro in $(DISTROS) ; do \
