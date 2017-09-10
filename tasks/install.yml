@@ -1,7 +1,7 @@
 ---
 
 - name: Add amonagent config
-- template: 
+  template: 
     src: amonagent.json.j2
     dest: /etc/opt/amonagent/amonagent.conf
 

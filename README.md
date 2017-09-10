@@ -13,8 +13,8 @@ Role Variables
 
 The variables that can be passed to this role are as follows:
 
-    api_key: ''  # The API key for your Amon Instance
-    amon_instance: "http://youramoninstance.amon.cx"    # The URL pointing to your Amon Instance
+    amon_api_key: ''  # The API key for your Amon Instance
+    amonagent_amon_instance: "https://subdomain.amon.cx"    # The URL pointing to your Amon Instance
 
 
 Installation
@@ -32,7 +32,12 @@ Example
 
     - hosts: all
       roles:
-        - {role: amonagent, api_key: '', amon_instance: 'https://youramoninstance.amon.cx'}
+        - amonapp.amonagent
+
+      vars:
+        amonagent_api_key: 'test'
+        amonagent_amon_instance: 'https://subdomain.amon.cx'
+
 
 License
 -------
