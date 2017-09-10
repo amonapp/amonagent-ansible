@@ -22,20 +22,4 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
     end
 
-
-    # # docker: for auto build & testing (e.g., Travis CI)
-    # config.vm.define "docker" do |node|
-    #     node.vm.box = "williamyeh/ubuntu-trusty64-docker"
-
-    #     node.vm.provision "shell", inline: <<-SHELL
-    #         cd /vagrant
-    #         docker build  -f test/Dockerfile-ubuntu14.04  -t java_trusty   .
-    #         docker build  -f test/Dockerfile-ubuntu12.04  -t java_precise  .
-    #         docker build  -f test/Dockerfile-debian8      -t java_jessie   .
-    #         docker build  -f test/Dockerfile-debian7      -t java_wheezy   .
-    #         docker build  -f test/Dockerfile-centos7      -t java_centos7  .
-    #         docker build  -f test/Dockerfile-centos6      -t java_centos6  .
-    #     SHELL
-    # end
-
 end
