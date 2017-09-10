@@ -23,6 +23,7 @@ timestamp=$(date +%s)
 
 # Allow environment variables to override defaults.
 distro=${distro:-"centos7"}
+container=${container:-"centos:7"}
 playbook=${playbook:-"test.yml"}
 cleanup=${cleanup:-"true"}
 container_id=${container_id:-$timestamp}
@@ -41,7 +42,7 @@ elif [ $distro = 'centos6' ]; then
 elif [ $distro = 'ubuntu1604' ]; then
   init="/lib/systemd/systemd"
   opts="--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-  container='ubuntu:16.04'
+  container="ubuntu:16.04"
 # Ubuntu 14.04
 elif [ $distro = 'ubuntu1404' ]; then
   init="/sbin/init"
@@ -54,6 +55,8 @@ elif [ $distro = 'debian9' ]; then
 elif [ $distro = 'debian8' ]; then
   init="/lib/systemd/systemd"
   opts="--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+fi
+
 
 # Run the container using the supplied OS.
 printf ${green}"Starting Docker container: docker-$distro-ansible."${neutral}"\n"
