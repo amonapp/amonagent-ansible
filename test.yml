@@ -10,6 +10,5 @@
     - include: 'handlers/main.yml'
 
   vars:
-    #java_version: 8
-    java_subversion: 112
-    java_install_jce: true
+    - amonagent_api_key: "uxIDpRApV3ULEnDUAwUNA6grHLBQs91iEiQsN8pIUao"
+    - amonagent_amon_instance: "http://10.0.2.2:8002"

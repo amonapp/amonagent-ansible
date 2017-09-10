@@ -3,9 +3,11 @@ services: docker
 
 env:
   - distro: ubuntu1604
+  - distro: debian8
+  - deistro: centos7
 
 script:
-  - chmod +x ${PWD}/tests/test.sh
+  - chmod +x ${PWD}/docker-tests.sh
 
   # Run tests.
-  - ${PWD}/tests/test.sh
+  - ${PWD}/docker-tests.sh
