@@ -4,7 +4,7 @@ services: docker
 env:
   - distro: ubuntu1604
   - distro: debian8
-  - distro: centos7
+  # - distro: centos7
 
 script:
   - chmod +x ${PWD}/docker-tests.sh
