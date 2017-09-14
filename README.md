@@ -1,6 +1,8 @@
 Amonagent
 =========
 
+[![Build Status](https://travis-ci.org/amonapp/amonagent-ansible.svg?branch=master)](https://travis-ci.org/amonapp/amonagent-ansible)
+
 The role install amonagent on RHEL, Debian and Ubuntu. 
 
 Requirements
