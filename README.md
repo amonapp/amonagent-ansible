@@ -1,52 +1,46 @@
-Amonagent
-=========
+# Amonagent
 
 [![Build Status](https://travis-ci.org/amonapp/amonagent-ansible.svg?branch=master)](https://travis-ci.org/amonapp/amonagent-ansible)
 
-The role install amonagent on RHEL, Debian and Ubuntu. 
+This role installs `amonagent` on RHEL, Debian and Ubuntu.
 
-Requirements
-------------
+## Requirements
 
-This role requires Ansible 2.3 or higher.
+This role requires Ansible 2.2 or higher.
 
-Role Variables
---------------
+## Role Variables
 
 The variables that can be passed to this role are as follows:
 
-    amon_api_key: ''  # The API key for your Amon Instance
-    amonagent_amon_instance: "https://subdomain.amon.cx"    # The URL pointing to your Amon Instance
+```
+  amon_api_key: '' # The API key for your Amon Instance
+  amonagent_amon_instance: "https://subdomain.amon.cx" # The URL pointing to your Amon Instance
+```
 
+## Installation
 
-Installation
-----------------
-
-To install the role run the following command:
+To install this role run the following command:
 
 ```
 ansible-galaxy install amonapp.amonagent
 ```
 
+## Example
 
-Example
-----------------
+```
+  - hosts: all
+    roles:
+      - amonapp.amonagent
 
-    - hosts: all
-      roles:
-        - amonapp.amonagent
+    vars:
+      amonagent_api_key: 'test'
+      amonagent_amon_instance: 'https://subdomain.amon.cx'
+```
 
-      vars:
-        amonagent_api_key: 'test'
-        amonagent_amon_instance: 'https://subdomain.amon.cx'
-
-
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 Martin Rusev (https://amon.cx)
