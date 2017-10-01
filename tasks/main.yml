@@ -5,8 +5,7 @@
 - include: tasks/setup_debian.yml
   when: hostvars[inventory_hostname]['ansible_os_family'] == 'Debian'
 
-- include:  tasks/install.yml
-
+- include: tasks/install.yml
 
 # Make sure all handlers are executed before running any subsequent roles
 - meta: flush_handlers

@@ -14,4 +14,4 @@
 - name: Install
   apt:
     name: amonagent
-    update_cache: yes
+    update_cache: true
