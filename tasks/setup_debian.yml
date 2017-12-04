@@ -7,7 +7,7 @@
 
 - name: Add repository - Debian/Ubuntu
   apt_repository:
-    repo: deb http://packages.amon.cx/repo amon contrib
+    repo: deb https://packages.amon.cx/repo amon contrib
     state: present
     filename: 'amonagent'
 
